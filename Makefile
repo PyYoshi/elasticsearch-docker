@@ -14,8 +14,8 @@ endif
 
 ELASTIC_REGISTRY=docker.elastic.co
 BASEIMAGE=$(ELASTIC_REGISTRY)/elasticsearch/elasticsearch-alpine-base:latest
-VERSIONED_IMAGE=$(ELASTIC_REGISTRY)/elasticsearch/elasticsearch:$(IMAGETAG)
-LATEST_IMAGE=$(ELASTIC_REGISTRY)/elasticsearch/elasticsearch:latest
+VERSIONED_IMAGE=elasticsearch:$(IMAGETAG)
+LATEST_IMAGE=elasticsearch:latest
 
 export ELASTIC_VERSION
 export ES_DOWNLOAD_URL
