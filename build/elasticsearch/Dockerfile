@@ -27,9 +27,10 @@ RUN set -ex && for esdirs in config data logs; do \
 
 USER elasticsearch
 
-# Install xpack
+# Install xpack, analysis-kuromoji and analysis-icu
 RUN eval ${ES_JAVA_OPTS:-} elasticsearch-plugin install --batch x-pack \
-     && eval ${ES_JAVA_OPTS:-} elasticsearch-plugin install --batch analysis-kuromoji
+     && eval ${ES_JAVA_OPTS:-} elasticsearch-plugin install --batch analysis-kuromoji \
+     && eval ${ES_JAVA_OPTS:-} elasticsearch-plugin install --batch analysis-icu
 
 COPY elasticsearch.yml config/
 COPY log4j2.properties config/
